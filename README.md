@@ -1,100 +1,104 @@
 # SheetDiff
 
-Excel 파일 비교 도구 - 두 Excel 파일의 차이점을 셀 단위로 비교하고 시각화합니다.
+A tool for comparing Excel files - Compare and visualize differences between two Excel files at the cell level.
 
-## 다운로드
+## Download
 
-| 플랫폼 | 다운로드 |
-|--------|----------|
+| Platform | Download |
+|----------|----------|
 | Windows | [SheetDiff_x.x.x_x64_en-US.msi](https://github.com/mintsoft-app-series/sheetdiff-release/releases/latest) |
 | macOS (Intel) | [SheetDiff_x.x.x_x64.dmg](https://github.com/mintsoft-app-series/sheetdiff-release/releases/latest) |
 | macOS (Apple Silicon) | [SheetDiff_x.x.x_aarch64.dmg](https://github.com/mintsoft-app-series/sheetdiff-release/releases/latest) |
 | Linux | [SheetDiff_x.x.x_amd64.AppImage](https://github.com/mintsoft-app-series/sheetdiff-release/releases/latest) |
 
-## 주요 기능
+## Key Features
 
-### 파일 비교
-- **지원 형식**: `.xlsx`, `.xls`, `.csv`
-- **드래그 앤 드롭**: 파일을 끌어다 놓기만 하면 비교 시작
-- **멀티 시트 지원**: 여러 시트가 있는 Excel 파일도 시트별 비교 가능
+### File Comparison
+- **Supported formats**: `.xlsx`, `.xls`, `.csv`
+- **Drag and drop**: Just drag and drop files to start comparing
+- **Multi-sheet support**: Compare Excel files with multiple sheets
 
-### 비교 방식
-- **값 비교**: 셀 값의 변경 사항 확인
-- **수식 비교**: 수식 변경 사항 별도 확인
-- **키 컬럼 매칭**: 행 번호 대신 특정 컬럼 값을 기준으로 행 매칭
+### Comparison Methods
+- **Value comparison**: Check cell value changes
+- **Formula comparison**: Detect formula changes separately
+- **Key column matching**: Match rows by specific column value instead of row number
 
-### 변경 유형 분류
-| 유형 | 설명 |
-|------|------|
-| 추가됨 | 비교 파일에만 존재 |
-| 삭제됨 | 원본 파일에만 존재 |
-| 수정됨 | 양쪽 파일에서 값이 다름 |
-| 변경 없음 | 동일한 값 |
+### Change Types
+| Type | Description |
+|------|-------------|
+| Added | Exists only in compare file |
+| Removed | Exists only in original file |
+| Modified | Different values in both files |
+| Unchanged | Same values |
 
-### 필터 옵션
-- **범위 지정**: 특정 컬럼/행 범위만 비교
-- **대소문자 무시**: `A` = `a`
-- **공백 무시**: `"a b"` = `"ab"`
-- **숫자 형식 무시**: `1000` = `1,000`
+### Filter Options
+- **Range specification**: Compare only specific column/row ranges
+- **Ignore case**: `A` = `a`
+- **Ignore whitespace**: `"a b"` = `"ab"`
+- **Ignore number formatting**: `1000` = `1,000`
 
-### 결과 내보내기
-- Excel (.xlsx) 형식으로 내보내기
-- CSV (UTF-8) 형식으로 내보내기
+### Export Results
+- Export to Excel (.xlsx) format
+- Export to CSV (UTF-8) format
 
 ### UI/UX
-- 다크 모드 / 라이트 모드
-- 50개 이상 언어 지원 (한국어 포함)
-- 키보드 단축키 지원
+- Dark mode / Light mode
+- 50+ languages supported
+- Keyboard shortcuts
 
-## 시스템 요구 사항
+## System Requirements
 
-| 플랫폼 | 요구 사항 |
-|--------|-----------|
-| Windows | Windows 10 이상 (64-bit) |
-| macOS | macOS 10.15 (Catalina) 이상 |
-| Linux | Ubuntu 20.04 이상 또는 동등한 배포판 |
+| Platform | Requirements |
+|----------|--------------|
+| Windows | Windows 10 or later (64-bit) |
+| macOS | macOS 10.15 (Catalina) or later |
+| Linux | Ubuntu 20.04 or equivalent distribution |
 
-## 설치 방법
+## Installation
 
 ### Windows
-1. `.msi` 파일 다운로드
-2. 설치 파일 실행
-3. 설치 마법사 지시에 따라 설치 완료
+1. Download the `.msi` file
+2. Run the installer
+3. Follow the installation wizard
 
 ### macOS
-1. `.dmg` 파일 다운로드
-2. DMG 파일 열기
-3. SheetDiff 앱을 Applications 폴더로 드래그
+1. Download the `.dmg` file
+2. Open the DMG file
+3. Drag SheetDiff app to the Applications folder
+4. Run the following command in Terminal to remove quarantine attribute:
+   ```bash
+   sudo xattr -rd com.apple.quarantine /Applications/SheetDiff.app
+   ```
 
 ### Linux
-1. `.AppImage` 파일 다운로드
-2. 실행 권한 부여: `chmod +x SheetDiff_*.AppImage`
-3. 실행: `./SheetDiff_*.AppImage`
+1. Download the `.AppImage` file
+2. Grant execute permission: `chmod +x SheetDiff_*.AppImage`
+3. Run: `./SheetDiff_*.AppImage`
 
-## 사용 방법
+## How to Use
 
-1. **파일 선택**: 원본 파일과 비교할 파일을 각각 선택하거나 드래그 앤 드롭
-2. **옵션 설정**: 필요시 비교 옵션 조정 (대소문자 무시, 범위 지정 등)
-3. **비교 실행**: "비교" 버튼 클릭
-4. **결과 확인**: 변경 사항 목록 확인 및 셀 위치로 이동
-5. **내보내기**: 필요시 결과를 Excel 또는 CSV로 저장
+1. **Select files**: Choose or drag and drop the original file and comparison file
+2. **Configure options**: Adjust comparison options if needed (ignore case, specify range, etc.)
+3. **Run comparison**: Click the "Compare" button
+4. **Review results**: Check the list of changes and navigate to cell locations
+5. **Export**: Save results to Excel or CSV if needed
 
-## 키보드 단축키
+## Keyboard Shortcuts
 
-| 단축키 | 동작 |
-|--------|------|
-| `↑` / `k` | 이전 변경 사항 |
-| `↓` / `j` | 다음 변경 사항 |
-| `Ctrl+O` | 원본 파일 선택 |
-| `Ctrl+P` | 비교 파일 선택 |
-| `Ctrl+E` | Excel로 내보내기 |
-| `Ctrl+S` | CSV로 내보내기 |
-| `ESC` | 결과창 닫기 |
+| Shortcut | Action |
+|----------|--------|
+| `↑` / `k` | Previous change |
+| `↓` / `j` | Next change |
+| `Ctrl+O` | Select original file |
+| `Ctrl+P` | Select compare file |
+| `Ctrl+E` | Export to Excel |
+| `Ctrl+S` | Export to CSV |
+| `ESC` | Close results |
 
-## 라이선스
+## License
 
 MIT License
 
-## 문의 및 피드백
+## Feedback
 
-버그 리포트나 기능 요청은 [GitHub Issues](https://github.com/mintsoft-app-series/sheetdiff-release/issues)에 등록해 주세요.
+Please report bugs or feature requests on [GitHub Issues](https://github.com/mintsoft-app-series/sheetdiff-release/issues).
